@@ -1,4 +1,4 @@
-class ReviewController < ApplicationController
+class ReviewsController < ApplicationController
    before_action :ensure_logged_in, only: [:create, :destroy] 
 	 before_action :load_product
 
@@ -40,13 +40,6 @@ class ReviewController < ApplicationController
     @product = Product.find(params[:product_id])
   end
 end
-app/controllers/products_controller.rb
 
-def show
-  @product = Product.find(params[:id])
 
-  if current_user
-    @review = @product.reviews.build
-  end
-end
 
